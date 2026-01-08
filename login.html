@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    /* ===== Body & Background ===== */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      position: relative;
+      overflow: hidden;
+      /* Radial gradient with soft blur halo */
+      background: radial-gradient(circle at center, #ff9a9e, #fad0c4, #a18cd1, #8e44ad);
+    }
+
+    /* ===== Glowing geometric shapes / blobs ===== */
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+    }
+
+    body::before {
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.15);
+      top: 50px;
+      left: 80px;
+    }
+
+    body::after {
+      width: 500px;
+      height: 500px;
+      background: rgba(255,192,203,0.15);
+      bottom: 50px;
+      right: 60px;
+    }
+
+    /* ===== Login Card ===== */
+    .login-card {
+      background: #1b1b2f;
+      padding: 60px 50px;
+      border-radius: 35px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      text-align: center;
+      color: #ffd6e0;
+      width: 400px;
+      position: relative;
+      z-index: 1; /* above blobs */
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 30px;
+      color: #fff0f5;
+    }
+
+    input {
+      width: 90%;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 25px;
+      border: none;
+      font-size: 20px;
+      text-align: center;
+      background: #302b63;
+      color: #ffd6e0;
+    }
+
+    input::placeholder {
+      color: #f7c5d3;
+    }
+
+    button {
+      padding: 16px 50px;
+      font-size: 22px;
+      border-radius: 35px;
+      border: none;
+      background: linear-gradient(to right, #ff4d6d, #ff758c);
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #ffb3c6;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h1>Login</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <br>
+    <button onclick="checkLogin()">Enter</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Set your desired username and password here
+      const correctUsername = "Racharla Rishith";
+      const correctPassword = "ammu";
+
+      // Custom wrong password message
+      const wrongMsg = "correct ga enter cheyyu bey";
+
+      if(username === correctUsername && password === correctPassword){
+        // correct login → move to next page
+        window.location.href = "question.html";
+      } else {
+        // show message
+        document.getElementById('message').innerText = wrongMsg;
+      }
+    }
+
+    // Optional: Press Enter key to trigger login
+    document.addEventListener("keypress", function(e){
+      if(e.key === "Enter"){
+        checkLogin();
+      }
+    });
+  </script>
+
+</body>
+</html>

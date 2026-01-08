@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Letter</title>
+  <style>
+    /* ===== Body & Background ===== */
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #d0f0fd, #a8e6cf); /* soft background */
+      overflow: hidden;
+    }
+
+    /* ===== Container to center letter + button ===== */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh; /* make room for scroll + button */
+    }
+
+    /* ===== Scroll Letter ===== */
+    .scroll-letter {
+      background: #f5deb3; /* parchment brown */
+      width: 700px;
+      max-width: 90%;
+      max-height: 70vh; /* scrollable if content is long */
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Decorative scroll top/bottom edges */
+    .scroll-letter::before,
+    .scroll-letter::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 20px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 50%;
+    }
+
+    .scroll-letter::before { top: -10px; }
+    .scroll-letter::after { bottom: -10px; }
+
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 42px;
+      color: #7b4b2b;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      line-height: 1.8;
+      color: #5a381e;
+      text-align: justify;
+      margin-bottom: 25px;
+    }
+
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      text-align: right;
+      color: #7b4b2b;
+      margin-top: 40px;
+    }
+
+    /* ===== Enter Button ===== */
+    button {
+      padding: 18px 60px;
+      font-size: 24px;
+      border-radius: 35px;
+      border: none;
+      background: linear-gradient(to right, #ff4d6d, #ff758c);
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.2s;
+    }
+
+    button:hover { transform: scale(1.05); }
+
+  </style>
+
+  <!-- Google Fonts for cursive -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="scroll-letter">
+      <h2>To My Love ❤️</h2>
+      <p>
+        Happy 5th anniversary my love.  
+        Every moment with you has been magical,  
+        every smile of yours lights up my world.  
+        Thank you for choosing me every day and making our journey so special.
+      </p>
+
+      <p>
+        You are my best friend, my joy, and my everything.  
+        I promise to hold your hand through every adventure, every challenge, and every dream.  
+        Forever and always, my heart is yours.
+      </p>
+
+      <div class="signature">
+        Your Cupcake 🧁
+      </div>
+    </div>
+
+    <button onclick="goNext()">Enter</button>
+  </div>
+
+  <script>
+    function goNext() {
+      window.location.href = "quiz.html"; // next page
+    }
+
+    document.addEventListener("keypress", function(e){
+      if(e.key === "Enter"){
+        goNext();
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Memories</title>
+  <style>
+    /* ===== Body & Background ===== */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #ffdde1, #f9f7d9);
+      overflow-x: hidden;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #ff4d6d;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    /* ===== Gallery Grid ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      width: 90%;
+      max-width: 1200px;
+      margin-bottom: 50px;
+    }
+
+    .photo-card {
+      background: #fff0f5;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    .photo-card:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-card img {
+      width: 100%;
+      border-radius: 20px;
+      max-height: 250px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .caption {
+      font-size: 20px;
+      color: #6a1b9a;
+      font-weight: 500;
+    }
+
+    /* ===== Enter Button ===== */
+    button {
+      padding: 18px 60px;
+      font-size: 24px;
+      border-radius: 35px;
+      border: none;
+      background: linear-gradient(to right, #ff4d6d, #ff758c);
+      color: white;
+      cursor: pointer;
+      margin-bottom: 40px;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Our Memories 💖</h1>
+
+  <div class="gallery">
+    <!-- Photo 1 -->
+    <div class="photo-card">
+      <img src="photo1.jpeg" alt="Memory 1">
+      <div class="caption">Our first photo together 🫶</div>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="photo-card">
+      <img src="photo 2.jpeg" alt="Memory 2">
+      <div class="caption">Our first journey 💕</div>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="photo-card">
+      <img src="photo 3.jpeg" alt="Memory 3">
+      <div class="caption">Our first date 😍</div>
+    </div>
+
+    <!-- Photo 4 -->
+    <div class="photo-card">
+      <img src="photo 4.jpeg" alt="Memory 4">
+      <div class="caption">My fav photo of us 💋</div>
+    </div>
+  
+     <!-- Photo 5 -->
+    <div class="photo-card">
+      <img src="photo 5.jpeg" alt="Memory 5">
+      <div class="caption">My fav photo of you 🫶</div>
+    </div>
+  
+     <!-- Photo 6 -->
+    <div class="photo-card">
+      <img src="photo 6.jpeg" alt="Memory 6">
+      <div class="caption">kamareddy😍</div>
+    </div>
+  
+     <!-- Photo 7 -->
+    <div class="photo-card">
+      <img src="photo 7.jpeg" alt="Memory 7">
+      <div class="caption">your birthday💋</div>
+    </div>
+
+    <!-- Photo 8 -->
+    <div class="photo-card">
+      <img src="photo 8.jpeg" alt="Memory 8">
+      <div class="caption">charminar😍</div>
+    </div>
+
+    <!-- Photo 9 -->
+    <div class="photo-card">
+      <img src="photo 9.png" alt="Memory 9">
+      <div class="caption">me and my atthamma😚</div>
+    </div>
+
+    <!-- Photo 10 -->
+    <div class="photo-card">
+      <img src="photo 10.jpeg" alt="Memory 10">
+      <div class="caption">cutieee 🫶</div>
+    </div>
+
+    <!-- Photo 11 -->
+    <div class="photo-card">
+      <img src="photo 11.jpeg" alt="Memory 11">
+      <div class="caption">🥹</div>
+    </div>
+
+    <!-- Photo 12 -->
+    <div class="photo-card">
+      <img src="photo 12.png" alt="Memory 12">
+      <div class="caption">😚😊</div>
+    </div>
+  
+
+  <button onclick="goNext()">Enter</button>
+
+  <script>
+    function goNext() {
+      window.location.href = "letter.html"; // next page
+    }
+
+    // Press Enter key to go next
+    document.addEventListener("keypress", function(e){
+      if(e.key === "Enter"){
+        goNext();
+      }
+    });
+  </script>
+
+</body>
+</html>
